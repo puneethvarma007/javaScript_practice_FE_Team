@@ -19,6 +19,24 @@ class StringPractice{
         console.log(str.slice(0,i));
     }
     // 5. Abbreviate Name
+    abbrivate_Name(str){
+        var name= str.trim().split(' ');
+        if(name.length > 0){
+            return console.log((name[0] + ' ' +  name[1]?.charAt(0)));
+        }
+        return console.log(name[0]);
+    }
+    // 6.Write a JavaScript function that hides email addresses to prevent unauthorized access.
+    protect_emai(str){
+        let avg,spliteed,part1,part2;
+        spliteed = str.split('@');
+        part1 = spliteed[0];
+        avg = part1.length/2;
+        part1 = part1.substring(0,(part1.length - avg))
+        part2 = spliteed[1];
+
+        return console.log(part1 + '...@' + part2);
+    }
 }
 
 const stringPractice = new StringPractice();
@@ -33,3 +51,8 @@ const stringPractice = new StringPractice();
 // stringPractice.string_to_array('hello world')
     
 // stringPractice.truncate_string("Robin Singh",4)
+
+// stringPractice.abbrivate_Name('puneeth Varma');
+// stringPractice.abbrivate_Name('puneeth k');
+
+stringPractice.protect_emai('hello@gmail.com');
